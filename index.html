@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de javaScript</title>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            background-color: #faf;
+            border: 2px solid #344;
+        }
+    </style>
+</head>
+<body>
+	<h1>Ejercicios incorporados</h1>
+    <button onclick="openPopup()">Ventana con acceso a los ejercicios</button>
+    <button onclick="showDialog()">Cuadro para el diálogo</button>
+
+    <div id="popup" class="popup">
+        <h2>Enlaces a los ejercicios</h2>
+        <p>Abre desde aquí cualquier ejercicio.</p>
+    <ul>
+        <li><a href="JuanLucas1.html" target="_blank">1) Preguntas al usuario</a></li>
+        <li><a href="JuanLucas2.html" target="_blank">2) Suma de dos números</a></li>
+        <li><a href="JuanLucas3.html" target="_blank">3) Mayoría de edad</a></li>
+        <li><a href="JuanLucas4.html" target="_blank">4) Pregunta si ir a una dirección</a></li>
+        <li><a href="JuanLucas5.html" target="_blank">5) Juego de números azarosos</a></li>
+        <li><a href="JuanLucas6.html" target="_blank">6) Test de cultura general</a></li>
+    </ul>
+        <button onclick="closePopup()">Cerrar</button>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function showDialog() {
+            alert("Dialogemos... ¿Qué tal está usted?");
+        }
+    </script>
+
+</body>
+</html>
