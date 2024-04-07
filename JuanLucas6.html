@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de 5 preguntas</title>
+</head>
+<body>
+  <h1>Test de 5 preguntas</h1>
+  <div id="questions">
+    <div>
+      <label for="q1">¿Cuántos huesos hay en el cuerpo humano?</label>
+      <input type="text" id="q1">
+    </div>
+    <div>
+      <label for="q2">¿Cómo se llaman las crías de los conejos?</label>
+      <input type="text" id="q2">
+    </div>
+    <div>
+      <label for="q3">¿Cuántas válvulas tiene el corazón humano?</label>
+      <input type="text" id="q3">
+    </div>
+    <div>
+      <label for="q4">¿Cómo se llama el proceso por el cual las plantas se alimentan?</label>
+      <input type="text" id="q4">
+    </div>
+    <div>
+      <label for="q5">¿Cuál es el músculo más fuerte del cuerpo humano?</label>
+      <input type="text" id="q5">
+    </div>
+  </div>
+  <button onclick="prueba()">Calificar</button>
+  <p id="resultado"></p>
+  <p id="tiempo"></p>
+
+  <script>
+    function prueba() {
+      const respuestas = ['206', 'gazapos', '4', 'fotosíntesis', 'masetero'];
+      let correctAnswers = 0;
+      for (let i = 1; i <= 5; i++) {
+        const guess = document.getElementById('q' + i).value.trim().toLowerCase();
+        if (guess === respuestas[i - 1]) {
+          correctAnswers++;
+        }
+      }
+      const resultado = `Has respondido correctamente ${correctAnswers} de 5 preguntas.`;
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    let secondsLeft = 60;
+    const Display = document.getElementById('tiempo');
+    const tiempo = setInterval(function() {
+      secondsLeft--;
+      Display.textContent = `Tiempo restante: ${secondsLeft} segundos`;
+      if (secondsLeft === 0) {
+        clearInterval(tiempo);
+        Display.textContent = "¡Se acabó el tiempo!";
+      }
+    }, 1000);
+  </script>

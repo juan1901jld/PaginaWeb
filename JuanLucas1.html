@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Información Personal</title>
+</head>
+<body>
+  <h2>Formulario de Información Personal</h2>
+  <form id="info">
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" required>
+    
+    <label for="pelo">Color de pelo:</label>
+    <input type="text" id="pelo" name="pelo" required>
+    
+    <label for="ojos">Color de ojos:</label>
+    <select id="ojos" name="ojos" required>
+      <option value="">Selecciona un color</option>
+      <option value="marrón">Marrón</option>
+      <option value="azul">Azul</option>
+      <option value="negro">Negro</option>
+      <option value="otro">Otro</option>
+    </select>
+    
+    <input type="submit" value="Enviar">
+  </form>
+  
+  <div id="output"></div>
+  
+  <script>
+    document.getElementById('info').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      var edad = document.getElementById('edad').value;
+      var pelo = document.getElementById('pelo').value;
+      var ojos = document.getElementById('ojos').value;
+      
+      var output = "Tu edad es " + edad + " años.<br>";
+      output += "Tu color de pelo es " + pelo + ".<br>";
+      output += "Tu color de ojos es " + ojos + ".";
+      
+      document.getElementById('output').innerHTML = output;
+    });
+  </script>
+</body>
+</html>

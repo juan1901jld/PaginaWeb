@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Adivina el número</h1>
+  <p>Intenta adivinar un número entre 1 y 10:</p>
+  <input type="number" id="prueba" min="1" max="10">
+  <button onclick="prueba()">Adivinar</button>
+  <p id="mensaje"></p>
+
+  <script>
+    // Generar un número aleatorio entre 1 y 10
+    const numeroAzar = Math.floor(Math.random() * 10) + 1;
+
+    function prueba() {
+      const prueba = parseInt(document.getElementById('prueba').value);
+
+      if (prueba === numeroAzar) {
+        mostrar("Has adivinado el número");
+      } else {
+        mostrar("¡Inténtalo de nuevo!");
+      }
+    }
+
+    function mostrar(mensaje) {
+      document.getElementById('mensaje').textContent = mensaje;
+    }
+  </script>
+</body>
+</html>
